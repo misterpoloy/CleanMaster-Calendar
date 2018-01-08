@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+	<title>Cleanmaster.com Calendar</title>
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDN9HGLIAnGUvTFO-5a3YUfEDUR2X4tWyw",
+        authDomain: "clean-master-calendar.firebaseapp.com",
+        databaseURL: "https://clean-master-calendar.firebaseio.com",
+        storageBucket: "",
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <!-- ********* JS ********** -->
+	<script src="assets/js/calaps_firebase.js" type="text/javascript" charset="utf-8"></script>
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+	
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+
+
+				var NamesAndEmails = new Array();
+
+                            var name1 = {
+								name: "Juan",
+								email: "juan@calaps.com",
+								objectName: "juancalapscom" 
+							}
+							var name2 = {
+								name: "Pablo",
+								email: "pablo@calaps.com",
+								objectName: "pablocalapscom" 
+							}
+
+                            var name3 = {
+								name: "Pablo",
+								email: "pablo@calaps.com",
+								objectName: "pablocalapscom" 
+							}
+                
+                NamesAndEmails.push(name1);
+                NamesAndEmails.push(name2);
+                NamesAndEmails.push(name3);
+
+
+                console.log("Tamaño de NamesAndEmails: " + NamesAndEmails.length);
+                            
+				var NamesAndEmailsClean = new Array();
+							var oso = {
+								name: "Mufasa",
+								email: "rey@leon.com",
+								objectName: "reyleoncom" 
+							}
+							var oso2 = {
+								name: "Simba",
+								email: "simba@leon2.com",
+								objectName: "reyleon2com" 
+							}
+					NamesAndEmailsClean.push(oso);
+					NamesAndEmailsClean.push(oso2);
+
+                
+                console.log("Tamaño de NamesAndEmailsClean: " + NamesAndEmailsClean.length);
+
+
+                   var agrega = false;
+
+					console.log("Comienza Loop local");
+
+						for (i = 0; i < NamesAndEmails.length; i++) {
+
+							agrega = false;
+							
+							for (x = 0; x < NamesAndEmailsClean.length; x++) {
+
+									if(NamesAndEmailsClean[x].email == NamesAndEmails[i].email){
+										agrega = true;			
+									}
+							}
+
+							if (agrega == false) {
+								NamesAndEmailsClean.push(NamesAndEmails[i]);
+							}
+						}
+					
+					console.log("Termina Loop local");
+
+					console.log("Tamaño final sin repeticiones: " + NamesAndEmailsClean.length); 
+
+                    //SE SUBE CADA UNO A FIREBASE
+                    var fname, fobjectName, femail;
+                    for (x = 0; x < NamesAndEmailsClean.length; x++) {
+
+                            fname = NamesAndEmailsClean[x].name;
+							fobjectName = NamesAndEmailsClean[x].objectName;
+							femail = NamesAndEmailsClean[x].email;
+                            
+                            firebase.database().ref('emails/' + fobjectName).set({
+                                email: femail,
+                                text: fname
+                            });
+					}
+
+
+});
+
+    </script>
+
+</head>
+
+<body>
+Prueba2
+</body>
+
+
+</html>

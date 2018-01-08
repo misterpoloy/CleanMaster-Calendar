@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+	<title>Cleanmaster.com Calendar</title>
+
+    <script src="https://www.gstatic.com/firebasejs/3.3.0/firebase.js"></script>
+    <script>
+      // Initialize Firebase
+      var config = {
+        apiKey: "AIzaSyDN9HGLIAnGUvTFO-5a3YUfEDUR2X4tWyw",
+        authDomain: "clean-master-calendar.firebaseapp.com",
+        databaseURL: "https://clean-master-calendar.firebaseio.com",
+        storageBucket: "",
+      };
+      firebase.initializeApp(config);
+    </script>
+
+
+    <!-- ********* JS ********** -->
+	<script src="assets/js/calaps_firebase.js" type="text/javascript" charset="utf-8"></script>
+	<!-- jQuery -->
+	<script src="http://code.jquery.com/jquery-2.2.4.min.js" type="text/javascript" charset="utf-8"></script>
+	
+    <script type="text/javascript">
+
+        $(document).ready(function(){
+/**
+			console.log("Prende...");
+            firebase.database().ref('/history/').once('value').then(function(snapshot) {
+				console.log("query...");
+
+                var history = snapshot.val();
+                var ammount = 0;
+
+                for (x in history) {
+					try {
+                       console.log(history[x]["event"]["email"]);
+                       ammount++;
+					}
+					catch(er) {
+						console.warn(history[x]);
+						ammount++;
+					}
+                }
+                
+				console.log("Total de correos: " +  ammount);
+
+
+            });
+
+
+			// Jquery Child
+				var query = firebase.database().ref("emails").orderByKey();
+				query.once("value")
+				.then(function(snapshot) {
+					var ammount = 0;
+					snapshot.forEach(function(childSnapshot) {
+					// key will be "ada" the first time and "alan" the second time
+					var key = childSnapshot.key;
+					// childData will be the actual contents of the child
+					var childData = childSnapshot.child("email").val();
+					console.log(childData.toLowerCase());
+					ammount++;
+				});
+					console.log("Total de correos: " + ammount);
+				});
+
+				**/
+
+				var NamesAndEmails = new Array();
+				var NamesAndEmailsClean = new Array();
+							var oso = {
+								name: "Mufasa",
+								email: "rey@leon.com",
+								objectName: "reyleoncom" 
+							}
+							var oso2 = {
+								name: "Mufasa2",
+								email: "rey@leon2.com",
+								objectName: "reyleon2com" 
+							}
+					NamesAndEmailsClean.push(oso);
+					NamesAndEmailsClean.push(oso2);
+
+				console.log("Comienza programa...");
+				var query = firebase.database().ref("history").orderByKey();
+				query.once("value")
+				.then(function(snapshot) {
+					console.log("firebase termina...");
+					var ammount = 0;
+					var newObject;
+					var emails;
+					var text;
+					var nameObject;
+					var re = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+
+						snapshot.forEach(function(childSnapshot) {
+						// key will be "ada" the first time and "alan" the second time
+						var key = childSnapshot.key;
+							try {
+								emails = childSnapshot.child("event/email").val().toLowerCase();
+								text = childSnapshot.child("event/text").val();
+
+							if(re.test(emails)){
+								nameObject = emails.replace(/[^a-zA-Z ]/g, "");
+
+								newObject = {
+									email: emails,
+									name: text,
+									objectName: nameObject
+									};
+								
+								NamesAndEmails.push(newObject);
+								
+							}
+
+							} catch(error){
+								//console.warn(key);
+							}
+						
+					});
+					
+					console.log("Tamaño de array: " + NamesAndEmails.length );
+					
+					var agrega = false;
+
+					console.log("Comienza Loop local");
+
+						for (i = 0; i < NamesAndEmails.length; i++) {
+
+							agrega = false;
+							
+							for (x = 0; x < NamesAndEmailsClean.length; x++) {
+
+									if(NamesAndEmailsClean[x].email == NamesAndEmails[i].email){
+										agrega = true;			
+									}
+							}
+
+							if (agrega == false) {
+								NamesAndEmailsClean.push(NamesAndEmails[i]);
+							}
+						}
+					
+					console.log("Termina Loop local");
+
+					console.log("Comienza firebase... chan chan chan!! "); 
+
+					//SE SUBE CADA UNO A FIREBASE
+                    var fname, fobjectName, femail;
+                    for (x = 0; x < NamesAndEmailsClean.length; x++) {
+
+                            fname = NamesAndEmailsClean[x].name;
+							fobjectName = NamesAndEmailsClean[x].objectName;
+							femail = NamesAndEmailsClean[x].email;
+                            
+                            firebase.database().ref('emails/' + fobjectName).set({
+                                email: femail,
+                                text: fname
+                            });
+					}
+
+
+				});
+
+
+        });
+    </script>
+
+</head>
+
+<body>
+Prueba 1.1
+</body>
+
+
+</html>

@@ -1,0 +1,184 @@
+
+		/** Custom Theme Colors **/
+		.dhx_cal_tab.active {
+    	background-color: #00b1e9;
+    	color: #ffffff;
+    	border: 1px solid #CECECE;
+		text-shadow: 0px 0px #ff0000;
+		}
+		.dhx_save_btn_set {
+    	background-color: #00a0d2;
+    	text-shadow: 0 0px 0 #93755f;
+		}
+		.dhx_delete_btn_set {
+    	border: 1px solid #FF8831;
+    	background-color: #ef4747;
+    	text-shadow: 0 0px 0 #93755f;
+		}
+		.dhx_cal_data table .dhx_matrix_scell {
+			font-size: 14px;
+    		color: #337abb;
+		}
+		.dhx_cal_cover {
+    	background-color: #000000;
+    	opacity: 0.6;
+		}
+		/** Custom colors  **/
+		.si {
+			    border: 2px solid #b14242;
+		}
+		.dhx_cal_event div.dhx_footer,
+		.dhx_cal_event.past_event div.dhx_footer,
+
+		/** php Services 1 **/
+		.dhx_cal_event.event_limpieza_ba div.dhx_footer,
+		.dhx_cal_event.event_limpieza_a div.dhx_footer,
+		.dhx_cal_event.event_limpieza_c div.dhx_footer,
+		.dhx_cal_event.event_limpieza_p div.dhx_footer,
+		.dhx_cal_event.event_limpieza_pi div.dhx_footer,
+		.dhx_cal_event.event_limpieza_ve div.dhx_footer,
+		.dhx_cal_event.event_limpieza_ge div.dhx_footer,
+		.dhx_cal_event.event_limpieza_vi div.dhx_footer,
+		.dhx_cal_event.event_servicio_m div.dhx_footer,
+		.dhx_cal_event.event_plagas_gel div.dhx_footer,
+		.dhx_cal_event.event_plagas_as div.dhx_footer,
+		.dhx_cal_event.event_plagas_roe div.dhx_footer,
+		{
+			background-color: transparent !important;
+		}
+		/** php Services 1 end **/
+
+		.dhx_cal_event .dhx_body{
+			-webkit-transition: opacity 0.1s;
+			transition: opacity 0.1s;
+			opacity: 0.7;
+		}
+		.dhx_cal_event .dhx_title{
+			line-height: 12px;
+		}
+		.dhx_cal_event_line:hover,
+		.dhx_cal_event:hover .dhx_body,
+		.dhx_cal_event.selected .dhx_body,
+		.dhx_cal_event.dhx_cal_select_menu .dhx_body{
+			opacity: 1;
+		}
+		/** php Services 2 end **/
+		.dhx_cal_event.event_limpieza_ba div, .dhx_cal_event_line.event_limpieza_ba{
+			background-color: #3b7f3b !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_ba{
+			color:#3b7f3b !important;
+		}
+		.dhx_cal_event.event_servicio_m div, .dhx_cal_event_line.event_servicio_m{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_servicio_m{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_a div, .dhx_cal_event_line.event_limpieza_a{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_a{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_c div, .dhx_cal_event_line.event_limpieza_c{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_c{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_p div, .dhx_cal_event_line.event_limpieza_p{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_p{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_pi div, .dhx_cal_event_line.event_limpieza_pi{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_pi{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_ve div, .dhx_cal_event_line.event_limpieza_ve{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_ve{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_plagas_gel div, .dhx_cal_event_line.event_plagas_gel{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_plagas_gel{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_plagas_as div, .dhx_cal_event_line.event_plagas_as{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_plagas_as{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_limpieza_as div, .dhx_cal_event_line.event_limpieza_as{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_as{
+			color:#e6b90c !important;
+		}
+		.dhx_cal_event.event_plagas_roe div, .dhx_cal_event_line.event_plagas_roe{
+			background-color: #e6b90c !important;
+		}
+		.dhx_cal_event_clear.event_plagas_roe{
+			color:#e6b90c !important;
+		}
+
+		.dhx_cal_event.event_limpieza_ge div, .dhx_cal_event_line.event_limpieza_ge{
+			background-color: #1796b0 !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_ge{
+			color:#1796b0 !important;
+		}
+
+		.dhx_cal_event.event_limpieza_ba div, .dhx_cal_event_line.event_limpieza_ba{
+			background-color: #3b7f3b !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_ba{
+			color:#3b7f3b !important;
+		}
+		.dhx_cal_event.event_limpieza_vi div, .dhx_cal_event_line.event_limpieza_vi{
+			background-color: #3b7f3b !important;
+		}
+		.dhx_cal_event_clear.event_limpieza_vi{
+			color:#3b7f3b !important;
+		}
+		.dhx_cal_event.event_outsourcing div, .dhx_cal_event_line.event_outsourcing{
+			background-color: #cb57d6 !important;
+		}
+		.dhx_cal_event_clear.event_outsourcing{
+			color:#cb57d6 !important;
+		}
+		/** php Services 2 end **/
+
+		/** Custom timeline Colors **/
+		.timeline_cell_1 {
+			background: #ffe3e3;
+		}
+		
+		.timeline_cell_2 {
+			background: #ffffe3;
+		}
+		
+		.timeline_cell_3 {
+			background: #e3f3ff;
+		}
+		
+		.timeline_cell_4 {
+			background: #d8fad7;
+		}
+		.timeline_cell_5 {
+			background: #f5b7ff;
+		}
+		.timeline_cell_8 {
+			background: #fde7d4;
+		}
+		/** Custom timeline Colors **/
+
+		/** End of custom colors **/

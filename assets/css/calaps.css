@@ -1,0 +1,256 @@
+/**
+    ---------- GENERAL
+*/
+    html {
+    position: relative;
+    min-height: 100%;
+    }
+    body {
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    }
+    i {
+    margin-right: 10px;
+    }
+    p {
+    text-align: justify;
+    } 
+
+/**
+    ---------- SPINNER
+**/
+
+.spinner {
+  width: 40px;
+  height: 40px;
+
+  position: relative;
+  margin: 27% auto;
+}
+
+.double-bounce1, .double-bounce2 {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  background-color: #01b9f3;
+  opacity: 0.6;
+  position: absolute;
+  top: 0;
+  left: 0;
+  
+  -webkit-animation: sk-bounce 2.0s infinite ease-in-out;
+  animation: sk-bounce 2.0s infinite ease-in-out;
+}
+
+.double-bounce2 {
+  -webkit-animation-delay: -1.0s;
+  animation-delay: -1.0s;
+}
+
+@-webkit-keyframes sk-bounce {
+  0%, 100% { -webkit-transform: scale(0.0) }
+  50% { -webkit-transform: scale(1.0) }
+}
+
+@keyframes sk-bounce {
+  0%, 100% { 
+    transform: scale(0.0);
+    -webkit-transform: scale(0.0);
+  } 50% { 
+    transform: scale(1.0);
+    -webkit-transform: scale(1.0);
+  }
+}
+
+/** 
+    ----------- HEADER 
+ **/
+ .top {
+		height: 55px;
+		border: 1px solid #eceef4;
+ 		background: rgb(253, 253, 253);
+		}
+		.logoIMG {
+    	width: 119px;
+            position: relative;
+                z-index: 9;
+    	margin: -10px 10px;
+    	}
+		.iconMenu {
+		width: 25px;
+		margin-right: 10px;
+		}
+		.menuStyle {
+		box-shadow: none;
+    	border: none;
+    	background: #FFF;
+		margin-top: 5px;
+		border: 1px solid #eceef4;
+
+		-webkit-border-radius: 5px;
+		-moz-border-radius: 5px;
+		border-radius: 5px;
+		}
+
+		.active {
+			background: #FFF;
+			border: 1px solid #eceef4;
+			border-width: 1px 1px 0px 1px;
+		}
+
+		.nav>li>a:focus, .nav>li>a:hover {
+    	background-color: #ffffff;
+		}
+        #privacy-policy {
+            max-height: calc(100vh - 270px);
+            overflow-y: auto;
+        }
+        #privacy-policy span, h3, h2 {
+            color: #555;
+            font-size: 16px;
+        }
+        #privacy-policy p {
+            color: #555;
+            font-size: 13px;
+        }
+        .navbar-toggle {
+            background: #00b1e9;
+        }
+        .navbar-toggle span{
+            background: white;
+        }
+        .icon-bar {
+            color:white;
+        }
+
+        .dropdown-menu>li>a {
+            display: block;
+            padding: 10px 20px;
+            clear: both;
+            font-weight: 400;
+            line-height: 2;
+            color: #333;
+            white-space: nowrap;
+        }
+
+/**
+    ---------- FOOTER
+*/
+
+		.footer {
+  		position: absolute;
+  		bottom: 1px;
+  		width: 100%;
+  		border: 1px solid #eceef4;
+  		height: 40px;
+  		background: rgb(253, 253, 253);
+		padding: 10px;
+		text-align: center;
+		}
+        .text-muted {
+        color: #777;
+        text-align: center;
+        }
+
+/**
+    ---------- REGISTER FORM
+*/
+
+.form-signin {
+    max-width: 420px;
+    padding: 30px 38px 66px;
+    margin: 0 auto;
+    border: 1px solid #eceef4;
+    background: rgb(253, 253, 253);
+  }
+
+.form-signin-heading {
+  text-align:center;
+  margin-bottom: 30px;
+}
+
+.form-control {
+  position: relative;
+  font-size: 16px;
+  height: auto;
+  padding: 10px;
+}
+
+input[type="text"] {
+        margin-bottom: 9px;
+        margin-top: 5px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}
+
+input[type="password"] {
+  margin-bottom: 20px;
+  border-top-left-radius: 0;
+  border-top-right-radius: 0;
+}
+.btn-primary {
+    background: #00b1e9;
+    border-color: #0d89b1;
+}
+/** MODALS **/
+.modal-body {
+    padding: 25px;
+}
+.modal-header {
+    padding: 15px;
+    border: 1px solid #eceef4;
+    background: rgb(253, 253, 253);
+    color: #337ab7;
+}
+/** TABLES **/
+.content-div {
+    width:100%; 
+    height:auto; 
+    padding-left: 6%; padding-right: 6%;
+}
+.fixed-table-header {
+        background: #fdfdfd;
+}
+.icon2{
+    width: 40px;
+    margin-top: -7px;
+    margin-left: 20px;
+}
+/** Main Content **/
+.titlePage {
+    text-align: center;
+    font-family: sans-serif;
+    color: #3f9edd;
+    font-weight: 300;
+}
+#modalPage {
+        width: 64%;
+}
+
+/** --------------  RESPONSIVE ----------- **/
+
+@media (max-width: 980px) {
+
+    .navbar {
+    margin-bottom: 0px;
+    }
+
+    .navbar-collapse {
+        float: left;
+        margin-top: 30px;
+    }
+    .footer {
+    display: none;
+    }
+    .dhx_cal_tab_standalone {
+        display: none;
+    }
+    .logoIMG {
+        width: 90px;
+        margin-left: 0px !important
+    }
+    .spinner {
+    margin: 75% auto;
+    }
+
+}
